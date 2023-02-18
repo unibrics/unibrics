@@ -4,8 +4,12 @@
 #### What is Unibrics?
 
 Unibrics is an open source framework for game development in Unity focused on two main tasks:
-1. Provide an architectural basis for designing modular, extendable, and configurable applications.
-2. Provide a set of optional modules for solving common tasks in game development, such as modular saves, AB-tests, configuration, analytics, and more.
+1. Provide an [architectural basis](https://github.com/unibrics/unibrics.core) for designing modular, extendable, and configurable applications.
+2. Provide a set of optional modules for solving common tasks in game development, such as:
+- [modular saves](https://github.com/unibrics/unibrics.saves);
+- [configuration and AB-tests](https://github.com/unibrics/unibrics.configuration);
+- analytics
+and more.
 
 
 ## Why do we need that?
