@@ -1,5 +1,5 @@
 # Unibrics
-![GitHub](https://img.shields.io/github/license/unibrics/unibrics)
+![GitHub](https://img.shields.io/github/license/unibrics/unibrics?style=for-the-badge&color=blue)
 
 #### What is Unibrics?
 
