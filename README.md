@@ -1,4 +1,5 @@
 # Unibrics
+![GitHub](https://img.shields.io/github/license/unibrics/unibrics)
 
 #### What is Unibrics?
 
