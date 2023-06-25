@@ -41,3 +41,30 @@ Unibrics can be used on different levels:
 ## Unibrics Architecture
 
 ## Quick start
+1. Create a new Unity project (or open an existing one).
+2. Currently Unibrics packages can be installed only via the git link, so open your `Packages/manifest.json` file and add the following dependencies:
+   ```
+    "com.unity.test-framework": "1.1.33",
+    "unibrics.core": "git@github.com:unibrics/unibrics.core.git#v0.1.14",
+    "unibrics.di.extenject": "git@github.com:unibrics/unibrics.di.extenject.git#v0.1.4",
+   ```
+   Unibrics packages contain Test assemblies, so we need to add a dependency on the test framework from Unity. Besides that, we're adding link to Core project (with abstract DI interfaces) and package with default DI implementation, which is Extenject in our case.
+> **Note**
+> After Extenject was merged back to the main Zenject repository latest versions of Zenject are not available to install via git or openUPM. Currently we're keeping dependency on Extenject library to keep installation simple and transparent
+3. Add block with custom openUPM scope to your `manifest.json`:
+  ```
+  "scopedRegistries": [
+    {
+      "name": "package.openupm.com",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.svermeulen.extenject",
+        "net.tnrd.nsubstitute"
+      ]
+    }
+  ]
+  ```
+We're adding Extenject and NSubstitute (used in test assemblies) libraries from [OpenUPM](https://openupm.com/) - Open Source Unity Package Registry
+4. Return to Unity and create your first assembly. Active use of different assemblies for different features is one of the most important concepts used in Unibrics and you will not be able to use it with single assembly per project.
+5. Add a reference to Unibrics Core assembly. All your future modules will have that dependency. You don't need to (even more, you shouldn't) add links to `Di.Extenject` or `Extenject` libraries - DI is covered in Core repository
+6. Put first files to your assemble - let's create a sample interface and sample implementation of it.
